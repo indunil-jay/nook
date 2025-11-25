@@ -2,6 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:nook/app/themes/widget_themes/appbar_theme.dart';
+import 'package:nook/app/themes/widget_themes/bottom_sheet_theme.dart';
+import 'package:nook/app/themes/widget_themes/checkbox_theme.dart';
+import 'package:nook/app/themes/widget_themes/chip_theme.dart';
 import 'package:nook/app/themes/widget_themes/elevated_button_theme.dart';
 import 'package:nook/app/themes/widget_themes/outlined_button_theme.dart';
 import 'package:nook/app/themes/widget_themes/text_field_theme.dart';
@@ -11,19 +14,32 @@ class  AppTheme {
   const AppTheme._();
 
  static ThemeData lightTheme = ThemeData(
-    scaffoldBackgroundColor: Colors.white,
+    useMaterial3: true  ,
+    fontFamily: 'Poppins',
     brightness: Brightness.light,
+    primaryColor: Colors.blue,
     textTheme: TTextTheme.lightTextTheme,
+    chipTheme: TChipTheme.lightChipTheme,
+    checkboxTheme: TCheckboxTheme.lightCheckboxTheme,
+    scaffoldBackgroundColor: Colors.white,
     appBarTheme: TAppBarTheme.lightAppBarTheme,
+    bottomSheetTheme: TBottomSheetTheme.lightBottomSheetTheme,
     elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
     outlinedButtonTheme: TOutlinedButtonTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
   );
 
   static ThemeData darkTheme = ThemeData(
+    useMaterial3: true  ,
+    fontFamily: 'Poppins',
     brightness: Brightness.dark,
+    primaryColor: Colors.blue,
+    chipTheme: TChipTheme.darkChipTheme,
     textTheme: TTextTheme.darkTextTheme,
+    checkboxTheme: TCheckboxTheme.darkCheckboxTheme,
+    scaffoldBackgroundColor: Colors.black,
     appBarTheme: TAppBarTheme.darkAppBarTheme,
+    bottomSheetTheme: TBottomSheetTheme.darkBottomSheetTheme,
     elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
     outlinedButtonTheme: TOutlinedButtonTheme.darkOutlinedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme,
