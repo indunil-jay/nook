@@ -1,11 +1,15 @@
 flutter_native_splash:
   color: "#ffffff"
   color_dark: "#272727"
+
   image: assets/logo/t-store-splash-logo-black.png
   image_dark: assets/logo/t-store-splash-logo-white.png
-  android: true
-  ios: true
-  web: false
-  android_gravity: center
-  ios_content_mode: scale_to_fill
+
+  # android: true
+  # ios: true
+  # web: false
+
+  # android_gravity: center
+  # ios_content_mode: scale_to_fill
+
   fullscreen: true
