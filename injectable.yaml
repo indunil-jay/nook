@@ -1,0 +1,9 @@
+generate_for:
+  include:
+    - lib/**
+
+targets:
+  $default:
+    generate_for:
+      include:
+        - lib/**

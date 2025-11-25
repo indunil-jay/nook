@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nook/app/router/router.dart';
+import 'app/di/injection.dart' as di;
+import 'package:nook/features/authentication/presentation/bloc/login_bloc.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.configureDependencies(); 
   runApp(const App());
 }
 
@@ -9,7 +15,25 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<LoginBloc>(
+          create: (_) => di.serviceLocator<LoginBloc>(),
+        ),
+
+        // Add more blocs here if needed
+        // BlocProvider<OtherBloc>(
+        //   create: (_) => di.serviceLocator<OtherBloc>(),
+        // ),
+      ],
+      child: MaterialApp.router(
+        title: 'NOOK',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        routerConfig: router,
+      ),
+    );
   }
 }
-
